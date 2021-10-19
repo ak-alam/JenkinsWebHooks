@@ -1,20 +1,16 @@
 pipeline {
     agent any
+    tools {nodejs "NodeJS16"}
 
     stages {
+        stage('source') {
+            steps {
+                git 'https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'initiating build step'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'initiating depoly step'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'initiating Test step'
+               sh 'npm install'
             }
         }
     }
