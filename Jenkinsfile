@@ -10,6 +10,12 @@ pipeline {
         }
         stage('Build') {
             steps {
+               cat 'Hello.txt'
+            }
+        }
+        
+        stage('Build') {
+            steps {
                sh 'npm install'
             }
         }
