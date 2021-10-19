@@ -2,10 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
-                sh 'cat Hello.txt'
+                echo 'initiating build step'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'initiating depoly step'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'initiating Test step'
             }
         }
     }
